@@ -19,14 +19,14 @@ const walletData = [
 ];
 
 const data = walletData.map(item => (
-  <tr>
+  <tr key={item.SNo}>
     <td>{item.SNo}</td>
     <td>{item.Date.toDateString()}</td>
     <td>{item.Description}</td>
     <td>{item.Amount}</td>
     <td>{item.Summary}</td>
     <td>
-      <i class="fa fa-pencil" aria-hidden="true" />
+      <i className="fa fa-pencil" aria-hidden="true" />
     </td>
   </tr>
 ));

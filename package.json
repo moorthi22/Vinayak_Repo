@@ -1,5 +1,5 @@
 {
-  "name": "wallet-tracker",
+  "name": "wallet",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -8,6 +8,7 @@
     "bootstrap": "4.4.1",
     "font-awesome": "4.7.0",
     "react": "16.12.0",
+    "react-datepicker": "2.15.0",
     "react-dom": "16.12.0",
     "react-scripts": "3.0.1",
     "reactstrap": "8.4.1"

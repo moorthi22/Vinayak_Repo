@@ -1,54 +1,51 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Row,
-  Col,
-  Container,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
+import { Button, Row, Col, Container } from "reactstrap";
+import ExpenseModal from "./ExpenseModal";
 
 const AddExpenses = props => (
   <Row>
     <Col xs="4">
-      <Button color="success" onClick={() => props.setModal(true)}>
+      <Button
+        color="success"
+        onClick={() => {
+          props.setModal(true);
+          props.setType("Income");
+        }}
+      >
         +Income
       </Button>
     </Col>
 
     <Col xs="4">
-      <Button color="warning">+Spending</Button>
+      <Button
+        color="warning"
+        onClick={() => {
+          props.setModal(true);
+          props.setType("Spending");
+        }}
+      >
+        +Spending
+      </Button>
     </Col>
     <Col />
   </Row>
 );
 
-const ExpenseModal = props => (
-  <>
-    <Modal isOpen={props.toggle}>
-      <ModalHeader>Add Income</ModalHeader>
-      <ModalBody />
-      <ModalFooter>
-        <Button color="success" onClick={() => {}}>
-          Add Income
-        </Button>{" "}
-        <Button color="secondary" onClick={() => {}}>
-          Cancel
-        </Button>
-      </ModalFooter>
-    </Modal>
-  </>
-);
-
 function AddEditExpenses() {
   const [modal, setModal] = useState(false);
+  const [type, setType] = useState("");
+  const [date, setDate] = useState(new Date());
 
   return (
     <Container fluid>
-      <AddExpenses setModal={setModal} />
-      <ExpenseModal toggle={modal} />
+      <AddExpenses setModal={setModal} setType={setType} />
+      <ExpenseModal
+        toggle={modal}
+        setModal={setModal}
+        type={type}
+        date={date}
+        setDate={setDate}
+      />
     </Container>
   );
 }

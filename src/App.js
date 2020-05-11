@@ -6,7 +6,7 @@ import AddEditExpenses from "./AddEditExpenses";
 export default function App() {
   return (
     <div className="App">
-      <h1>Wallet Tracker</h1>
+      <h2>Wallet Tracker</h2>
       <WalletList />
       <AddEditExpenses />
     </div>
